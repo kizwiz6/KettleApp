@@ -7,12 +7,10 @@
             Console.WriteLine("Starting to make a cup of tea...");
 
             // Step 1: Boil water
-            Console.WriteLine("Starting to boil water...");
             await BoilWaterASync();
             await Console.Out.WriteLineAsync("Water is boiled.");
 
             // Step 2: Steep tea
-            await Console.Out.WriteLineAsync("Steeping tea...");
             await SteepTeaAsync();
             await Console.Out.WriteLineAsync("Tea is ready.");
 
@@ -25,10 +23,10 @@
             await Console.Out.WriteLineAsync("Milk added.");
 
             // Step 5: Pour tea into a cup
-            await Console.Out.WriteLineAsync("Pouring tea into a cup...");
             PourTea();
 
             await Console.Out.WriteLineAsync("Your cup of tea is ready. Enjoy!");
+            PrintKettle();
         }
 
         static async Task BoilWaterASync()
@@ -65,6 +63,24 @@
         static void PourTea()
         {
             Console.WriteLine("Pouring tea into a cup...");
+        }
+
+        static void PrintKettle()
+        {
+            Console.WriteLine(@"
+       ( (
+        ) )
+    .........          _______________
+   .         .       _|             |_
+  /   ( ( ) )  \    |                 |
+ /               \  |                 |
+| (  (   )   )  ) | |                 |
+ \ \____________/ /  |                 |
+  \______________/   |                 |
+     ________        |                 |
+    |        |       |                 |
+    |________|       |_________________|
+            ");
         }
     }
 }
